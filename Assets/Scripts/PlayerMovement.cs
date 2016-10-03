@@ -23,6 +23,6 @@ public class PlayerMovement : MonoBehaviour {
 		} else {
 			anim.SetBool("isWalking", false);
 		}
-		rbody.MovePosition (rbody.position + movement_vector * Time.deltaTime);
+		rbody.MovePosition (rbody.position + movement_vector * Time.deltaTime *2);
 	}
 }
