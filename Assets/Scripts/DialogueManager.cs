@@ -9,8 +9,11 @@ public class DialogueManager : MonoBehaviour {
 	public string[] dialogLines;
 	public int currentLines;
 
+	private PlayerMovement player;
+
 	void Start(){
 		currentLines = 0;
+		player = FindObjectOfType<PlayerMovement> ();
 	}
 	void Update () {
 		
@@ -22,6 +25,7 @@ public class DialogueManager : MonoBehaviour {
 			dialogueBox.SetActive (false);
 			dialogActive = false;
 			currentLines = 0;
+			player.canMove = true;
 		}
 		dialogueText.text = dialogLines [currentLines];
 	}
@@ -29,6 +33,7 @@ public class DialogueManager : MonoBehaviour {
 		
 		dialogActive = true;
 		dialogueBox.SetActive (true);
+		player.canMove = false;
 	}
 
 }
